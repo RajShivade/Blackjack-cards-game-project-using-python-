@@ -214,7 +214,8 @@ This documentation provides an overview and detailed explanation of each functio
 ~The scores are compared, and the result is displayed.
 
 ~The user is asked if they want to play another round. If yes, the console is cleared, and a new game starts.
-
+# Output:-
+blackjack output .jpg
 # Conclusion :-
 
 This project provides a simple yet effective way to experience Blackjack in a console environment. It demonstrates key programming concepts such as random number generation, list manipulation, conditional logic, and user interaction, making it a valuable learning tool for beginner programmers.
