@@ -73,18 +73,17 @@ from art import logo
 -Functions:-
 deal_card()
 
--Definition:
 def deal_card():
   """Returns a random card from the deck."""
   cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
   card = random.choice(cards)
   return card
 
--Description:
+
 This function returns a random card from the deck. The deck is represented by a list of integers where 11 is the Ace, and 10 is used four times to represent the face cards (Jack, Queen, King) and the 10 itself.
 
 calculate_score(cards)
-Definition:
+
 def calculate_score(cards):
   """Take a list of cards and return the score calculated from the cards"""
   if sum(cards) == 21 and len(cards) == 2:
@@ -94,7 +93,6 @@ def calculate_score(cards):
     cards.append(1)
   return sum(cards)
 
--Description:
 This function takes a list of cards and calculates the score based on the standard Blackjack rules:
 
 ~If the score is 21 with exactly two cards (an Ace and a 10-value card), it returns 0 to represent a Blackjack.
@@ -105,7 +103,7 @@ This function takes a list of cards and calculates the score based on the standa
 
 compare(user_score, computer_score):-
 
--Definition:_
+- Then ,
 
 def compare(user_score, computer_score):
   if user_score > 21 and computer_score > 21:
