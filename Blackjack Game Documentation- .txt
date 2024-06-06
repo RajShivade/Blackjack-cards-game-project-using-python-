@@ -1,0 +1,170 @@
+Blackjack Game Documentation:- 
+
+Overview:
+
+This project is a simple text-based implementation of the popular card game Blackjack. The game allows a user to play against the computer. The main features include dealing cards, calculating scores, handling special conditions like Blackjack, and comparing scores to determine the winner.
+
+Table of Contents:-
+
+1.Dependencies
+
+2.Functions
+  ~deal_card()
+  ~calculate_score(cards)
+  ~compare(user_score, computer_score)
+  ~play_game()
+
+3. Main Loop
+
+Dependencies:-
+
+Libraries:-
+
+ ~random: Used to randomly select cards from the deck.
+
+ ~replit.clear: Used to clear the console for a fresh game display.
+ 
+~art.logo: A string containing the ASCII art for the game's logo.
+
+Import Statements:-
+import random
+from replit import clear
+from art import logo
+
+Functions:-
+deal_card()
+
+Definition:
+def deal_card():
+  """Returns a random card from the deck."""
+  cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+  card = random.choice(cards)
+  return card
+
+Description:
+This function returns a random card from the deck. The deck is represented by a list of integers where 11 is the Ace, and 10 is used four times to represent the face cards (Jack, Queen, King) and the 10 itself.
+
+calculate_score(cards)
+Definition:
+def calculate_score(cards):
+  """Take a list of cards and return the score calculated from the cards"""
+  if sum(cards) == 21 and len(cards) == 2:
+    return 0
+  if 11 in cards and sum(cards) > 21:
+    cards.remove(11)
+    cards.append(1)
+  return sum(cards)
+
+Description:
+This function takes a list of cards and calculates the score based on the standard Blackjack rules:
+
+
+~If the score is 21 with exactly two cards (an Ace and a 10-value card), it returns 0 to represent a Blackjack.
+
+~If the score exceeds 21 and the list contains an Ace (value 11), it replaces the Ace with a 1 to avoid busting.
+
+~ Otherwise, it returns the sum of the card values.
+
+compare(user_score, computer_score):-
+
+Definition:_
+
+def compare(user_score, computer_score):
+  if user_score > 21 and computer_score > 21:
+    return "You went over. You lose 😤"
+  if user_score == computer_score:
+    return "Draw 🙃"
+  elif computer_score == 0:
+    return "Lose, opponent has Blackjack 😱"
+  elif user_score == 0:
+    return "Win with a Blackjack 😎"
+  elif user_score > 21:
+    return "You went over. You lose 😭"
+  elif computer_score > 21:
+    return "Opponent went over. You win 😁"
+  elif user_score > computer_score:
+    return "You win 😃"
+  else:
+    return "You lose 😤"
+
+Description:
+
+This function compares the user's score with the computer's score and returns a string indicating the result:
+
+~If both scores are over 21, the user loses.
+
+~If the scores are equal, it’s a draw.
+
+~If the computer has a Blackjack, the user loses.
+
+~If the user has a Blackjack, the user wins.
+
+~If the user's score exceeds 21, the user loses.
+
+~If the computer's score exceeds 21, the user wins.
+
+~If none of the above conditions are met, the higher score wins.
+
+~play_game()
+
+Definition:
+
+def play_game():
+  print(logo)
+  user_cards = []
+  computer_cards = []
+  is_game_over = False
+
+  for _ in range(2):
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
+
+  while not is_game_over:
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
+    print(f"   Your cards: {user_cards}, current score: {user_score}")
+    print(f"   Computer's first card: {computer_cards[0]}")
+
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+      is_game_over = True
+    else:
+      user_should_deal = input("Type 'y' to get another card, type 'n' to pass: ")
+      if user_should_deal == "y":
+        user_cards.append(deal_card())
+      else:
+        is_game_over = True
+
+  while computer_score != 0 and computer_score < 17:
+    computer_cards.append(deal_card())
+    computer_score = calculate_score(computer_cards)
+
+  print(f"   Your final hand: {user_cards}, final score: {user_score}")
+  print(f"   Computer's final hand: {computer_cards}, final score: {computer_score}")
+  print(compare(user_score, computer_score))
+
+Description:-
+
+This function orchestrates the main flow of the game:
+
+~It prints the game logo.
+
+~Deals two cards each to the user and the computer.
+
+~Enters a loop where the user's score is calculated and displayed. The user is asked if they want another card.
+
+~If the user's score is a Blackjack, exceeds 21, or the user chooses to pass, the loop ends.
+
+~The computer then draws cards until its score is at least 17.
+
+~Finally, the scores are compared, and the result is displayed.
+
+Main Loop:- 
+
+Definition:
+while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
+  clear()
+  play_game()
+
+This documentation provides an overview and detailed explanation of each function and the main loop used in the Blackjack game. The functions handle card dealing, score calculation, and game logic, while the main loop manages the game's replayability.
+
+
