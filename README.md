@@ -220,7 +220,7 @@ This documentation provides an overview and detailed explanation of each functio
     <a href="https://google.com">
     <img src="./blackjack output .png">
    
-    </a>
+    
 </h1>
 blackjack output .jpg
 # Conclusion :-
