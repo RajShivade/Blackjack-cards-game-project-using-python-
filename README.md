@@ -222,7 +222,7 @@ This documentation provides an overview and detailed explanation of each functio
    
     
 </h1>
-blackjack output .jpg
+
 # Conclusion :-
 
 This project provides a simple yet effective way to experience Blackjack in a console environment. It demonstrates key programming concepts such as random number generation, list manipulation, conditional logic, and user interaction, making it a valuable learning tool for beginner programmers.
