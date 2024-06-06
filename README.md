@@ -7,18 +7,18 @@ This project is a text-based implementation of the classic card game Blackjack, 
 The primary objective of this project is to provide a fun and interactive way to play Blackjack in a console environment while demonstrating the use of Python functions, control flow, and basic game logic.
 
 # Features:-
--Card Dealing: Randomly deal cards to the user and the computer from a virtual deck.
--Score Calculation: Calculate the score of a hand based on the values of the cards.
--Blackjack Handling: Recognize and handle Blackjacks and adjust the value of Aces to prevent busting.
--Game Logic: Implement the game rules, including player decisions and computer actions.
--Replayability: Allow the user to play multiple games in a single session.
--Dependencies
+- Card Dealing: Randomly deal cards to the user and the computer from a virtual deck.
+- Score Calculation: Calculate the score of a hand based on the values of the cards.
+- Blackjack Handling: Recognize and handle Blackjacks and adjust the value of Aces to prevent busting.
+- Game Logic: Implement the game rules, including player decisions and computer actions.
+- Replayability: Allow the user to play multiple games in a single session.
+- Dependencies
 
 # The project relies on the following Python modules:
 
--random: For random selection of cards from the deck.
--replit.clear: For clearing the console between games (specific to the Replit platform).
--art.logo: For displaying the game logo.
+- random: For random selection of cards from the deck.
+- replit.clear: For clearing the console between games (specific to the Replit platform).
+- art.logo: For displaying the game logo.
 
 # How It Works
 -Card Dealing: At the start of the game, both the user and the computer are dealt two cards each from the deck.
@@ -28,19 +28,19 @@ The primary objective of this project is to provide a fun and interactive way to
 -Replay Option: The user is given the option to play another game or exit.
 
 # Functions
-→deal_card()
+→ deal_card()
 This function returns a randomly selected card from a predefined list of card values, simulating the drawing of a card from a deck.
 
-→calculate_score(cards)
+→ calculate_score(cards)
 This function calculates the score of a given hand of cards, taking into account the special values of Aces and the condition for a Blackjack.
 
-→compare(user_score, computer_score)
+→ compare(user_score, computer_score)
 This function compares the scores of the user and the computer to determine the outcome of the game, handling all possible game scenarios (e.g., Blackjack, bust).
 
-→play_game()
+→ play_game()
 This function manages the flow of a single game, including dealing cards, handling user input, executing the computer's turn, and displaying the final results.
 
-→Main Loop
+→ Main Loop
 The main loop allows the user to play multiple games consecutively by repeatedly invoking the play_game() function as long as the user wishes to continue.
 
 # Table of Contents:-
@@ -55,9 +55,9 @@ The main loop allows the user to play multiple games consecutively by repeatedly
 
 3. Main Loop
 
--Dependencies:-
+- Dependencies:-
 
--Libraries:-
+- Libraries:-
 
  ~random: Used to randomly select cards from the deck.
 
@@ -70,7 +70,7 @@ import random
 from replit import clear
 from art import logo
 
--Functions:-
+- Functions:-
 deal_card()
 
 def deal_card():
@@ -78,8 +78,7 @@ def deal_card():
   cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
   card = random.choice(cards)
   return card
-
-
+  
 This function returns a random card from the deck. The deck is represented by a list of integers where 11 is the Ace, and 10 is used four times to represent the face cards (Jack, Queen, King) and the 10 itself.
 
 calculate_score(cards)
@@ -93,7 +92,7 @@ def calculate_score(cards):
     cards.append(1)
   return sum(cards)
 
-This function takes a list of cards and calculates the score based on the standard Blackjack rules:
+- This function takes a list of cards and calculates the score based on the standard Blackjack rules:
 
 ~If the score is 21 with exactly two cards (an Ace and a 10-value card), it returns 0 to represent a Blackjack.
 
@@ -123,7 +122,7 @@ def compare(user_score, computer_score):
   else:
     return "You lose 😤"
 
--Description:
+- Description:
 
 This function compares the user's score with the computer's score and returns a string indicating the result:
 
@@ -143,7 +142,7 @@ This function compares the user's score with the computer's score and returns a 
 
 ~play_game()
 
--Definition:
+- Definition:
 
 def play_game():
   print(logo)
@@ -178,7 +177,7 @@ def play_game():
   print(f"   Computer's final hand: {computer_cards}, final score: {computer_score}")
   print(compare(user_score, computer_score))
 
-Description:-
+- Description:-
 
 This function orchestrates the main flow of the game:
 
@@ -194,9 +193,7 @@ This function orchestrates the main flow of the game:
 
 ~Finally, the scores are compared, and the result is displayed.
 
-Main Loop:- 
-
--Definition:
+- Main Loop:- 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
   clear()
   play_game()
