@@ -215,6 +215,13 @@ This documentation provides an overview and detailed explanation of each functio
 
 ~The user is asked if they want to play another round. If yes, the console is cleared, and a new game starts.
 # Output:-
+
+<h1 align="center">
+    <a href="https://google.com">
+    <img src="./blackjack output .png">
+   
+    </a>
+</h1>
 blackjack output .jpg
 # Conclusion :-
 
