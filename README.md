@@ -217,7 +217,7 @@ This documentation provides an overview and detailed explanation of each functio
 # Output:-
 
 <h1 align="center">
-    <a href="https://google.com">
+   <a href="https://google.com">
     <img src="./blackjack output .png">
    
     
